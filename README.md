@@ -2,9 +2,9 @@
 
 ## Overview
 
-MFT is an HTTP accessible API designed to provide consumers with information about food trucks. The API exposes endpoints that allows consumers to retrieve food trucks by locationId (unique identifier) and a collection of trucks located on a specific city block. The API also enables the registration of new food trucks.
+MFT is an HTTP-accessible API designed to provide consumers with information about food trucks. The API exposes endpoints that allow consumers to retrieve food trucks by locationId (unique identifier) and a collection of trucks located on a specific city block. The API also enables the registration of new food trucks.
 
-## The MFT is built using
+## MFT is built using
 
 - Frameworks: .Net 5.0, ASP.NET WebAPI
 - Languages: C# 
@@ -15,9 +15,9 @@ MFT is an HTTP accessible API designed to provide consumers with information abo
 
 ## High-level design approach
 
-MFT's data source is a CSV data file containing a list of registered food trucks. On start up, MFT reads the CSV file, parses it and stores it in-memory as a pair dictionaries.
+MFT's data source is a CSV data file containing a list of registered food trucks. At startup, MFT reads the CSV file, parses it, and stores it in memory as a pair of dictionaries.
 
-Since the API only allows retrieval by LocationId and BlockId, using these as dictionary keys enabled O(1) time complexity for data retrieval.
+Since the API only allows retrieval by `locationId` and `block`, using these as dictionary keys enabled O(1) time complexity for data retrieval.
 
 In recognization of the future potential size of the data source, the solution is comprised of several layers. The file retrieval and parsing components are designed to be incremental. Each line is read, parsed, and returned to the consumer as an enumerable with a yield return. Therefore, as the dataset grows, the data service could be modified to store the data in a method better suited to large collections of data (i.e., persistence to non-volatile storage, etc.) without impacting the other layers of this solution.
 
@@ -178,7 +178,7 @@ The solution currently includes a small set of unit tests that focuses on verify
 
 > my-food-is-made-in-trucks/FoodTrucks/FoodTrucks.Tests.Integration/
 
-The solution also includes a battery of integration tests to verify the API against its published specification. It also, services to test the solution in its entirety.
+The solution also includes a battery of integration tests to verify the API against its published specification. It also serves to test the solution in its entirety.
 
 
 ## Running
