@@ -183,7 +183,7 @@ The solution also includes a battery of integration tests to verify the API agai
 
 ## Running
 
-This solution was build using .NET 5.0, it can be built, tested, and ran using dotnet CLI commands or from Visual Studio 2019 or later.
+This solution was created using .NET 5.0, it can be built, tested, and ran using dotnet CLI commands or from Visual Studio 2019 or later.
 
 ### Example of running solution from dotnet CLI
 
